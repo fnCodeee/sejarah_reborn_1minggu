@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'arges';
+    src: url(/asset/arges-variable-wght-wdth-slnt.ttf) format('truetype');
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
+    font-style: oblique 0deg 10deg;
+}
+
+@font-face {
+    font-family: 'PPmori';
+    src: url(/asset/PPMori-Regular.otf);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #F1EADA;
+    font-family: 'PPmori', sans-serif;
+}
+
+/* HERO SECTION */
+#hero-section {
+    padding: 0 4rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arges-heading {
+    font-family: 'arges';
+    font-weight: 900;
+    font-stretch: 80%;
+    font-variation-settings: "slnt" -30;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 6rem;
+    max-width: 760px;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background-color: #E8465E;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'PPmori';
+    cursor: pointer;
+}
+
+/* LATAR BELAKANG */
+#latar-belakang {
+    padding: 0 4rem;
+}
+
+.latar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.judul {
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    max-width: 655px;
+}
+
+.img-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-left {
+    margin-right: -1.5rem;
+    z-index: 1;
+}
+
+.img-right {
+    margin-left: 1.5rem;
+}
+
+.lb-paragraf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.teks-besar {
+    font-size: 1.75rem;
+    font-weight: 600;
+    max-width: 760px;
+}
+
+.subjudul {
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.lb-paragraf2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.lb-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 502px;
+}
+
+.teks-sedang {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
