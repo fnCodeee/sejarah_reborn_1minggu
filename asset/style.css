@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'arges';
-  src: url(/asset/arges-variable-wght-wdth-slnt.ttf) format('truetype');
+  font-family: "arges";
+  src: url(/asset/arges-variable-wght-wdth-slnt.ttf) format("truetype");
   font-weight: 100 900;
   font-stretch: 75% 125%;
   font-style: oblique 0deg 10deg;
 }
 
 @font-face {
-  font-family: 'PPmori';
+  font-family: "PPmori";
   src: url(/asset/PPMori-Regular.otf);
   /* src: url(/asset/PPMori-SemiBold.otf); */
 }
 
+.font_arges {
+  font-family: "arges";
+  font-weight: 900;
+}
+.font_ppmori {
+  font-family: "PPmori";
+}
 body {
-  background-color: #F1EADA;
+  background-color: #f1eada;
 }
 
 :root {
@@ -23,9 +30,7 @@ body {
   --cream: #f1eada;
   --green: #10935b;
   --black: #101010;
-
 }
-
 
 /* section home & Latar belakang */
 #hero-section {
@@ -48,12 +53,16 @@ body {
   font-style: italic;
 }
 
+
 /* latar belakang */
 #latar-belakang {
   padding-inline: 64px;
 }
 
 .main-latar {
+  
+  /* OVERFLOWNYA GW HIDDEN */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -70,7 +79,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
+
 
 .img-container img:first-child {
   margin-left: -24px;
@@ -109,11 +120,11 @@ body {
 
 /*  */
 .font-arges {
-  font-family: 'arges';
+  font-family: "arges";
 }
 
 .arges-heading {
-  font-family: 'arges';
+  font-family: "arges";
   font-weight: 900;
   font-stretch: 80%;
   font-variation-settings: "slnt" -30;
@@ -122,16 +133,22 @@ body {
 }
 
 .hero-btn {
-  font-family: 'PPmori';
+  font-family: "PPmori";
   background-color: var(--red);
   padding-inline: 24px;
   padding-block: 12px;
   background-color: var(--red);
+}
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px ;
 }
 
 .mori-heading {
-  font-family: 'PPmori';
+  font-family: "PPmori";
   line-height: 90%;
 }
 
@@ -158,7 +175,7 @@ body {
 }
 
 #time_line h1 {
-  font-family: 'arges';
+  font-family: "arges";
   font-size: 48px;
   text-align: start;
   width: 100%;
@@ -187,7 +204,7 @@ body {
 }
 
 .top-box h1 {
-  font-family: 'arges';
+  font-family: "arges";
   font-weight: 900;
   font-stretch: 80%;
   font-variation-settings: "slnt" -30;
@@ -201,7 +218,7 @@ body {
 
 .top-box span {
   font-style: italic;
-  font-family: 'arges';
+  font-family: "arges";
   color: var(--black);
   font-size: 32px;
   font-weight: 900;
@@ -212,7 +229,7 @@ body {
 
 .top-box p {
   font-style: italic;
-  font-family: 'arges';
+  font-family: "arges";
   color: var(--black);
   font-size: 48px;
   max-width: 214px;
@@ -226,7 +243,6 @@ body {
   display: flex;
   height: 100vh;
   background-color: var(--black);
-
 }
 
 .left_alisya {
@@ -245,6 +261,11 @@ body {
   height: 100%;
   background-color: #f1eada;
 }
+.right_alisya img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .left_alisya h1 {
   font-size: 96px;
@@ -253,7 +274,7 @@ body {
 }
 
 .left_alisya p {
-  font-family: 'PPmori';
+  font-family: "PPmori";
   font-size: 32px;
   line-height: 34px;
   margin: 0;
@@ -273,9 +294,6 @@ body {
 }
 
 /*  */
-.container {
-  height: 100vh;
-}
 
 .section_img_wrapper {
   width: 100%;
@@ -287,6 +305,11 @@ body {
   /* height: 100vh;  */
   height: 340px;
   overflow: hidden;
+}
+.section_img_wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .section-p {
@@ -318,7 +341,7 @@ body {
 }
 
 .section-main-3 h2 {
-  font-family: 'PPmori';
+  font-family: "PPmori";
   font-size: 40px;
   font-weight: 600;
   line-height: 34px;
@@ -335,27 +358,16 @@ body {
   font-size: 128px;
 }
 
-/* .white img {
-  width: 100%;
-  height: 100%;
-} */
-
 .subtitle {
-  font-family: 'arges';
+  font-family: "arges";
   font-weight: 900;
   font-size: 48px;
   line-height: 49px;
   max-width: 245px;
 }
 
-/* .white {
-  background-color: #eee;
-  height: 70%;
-} */
-
-
 .description {
-  font-family: 'PPmori';
+  font-family: "PPmori";
   color: var(--cream);
   font-size: 32px;
   line-height: 34px;
@@ -364,19 +376,19 @@ body {
 
 /*  */
 .container-2 {
-  height: 100vh;
+  height: auto;
 }
 
 .hero h1 {
   font-weight: 950;
   font-size: 128px;
-  font-family: 'arges';
+  font-family: "arges";
   font-style: bold;
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-family: 'arges';
+  font-family: "arges";
   font-weight: 900;
   font-size: 48px;
   font-style: Black oblique;
@@ -384,7 +396,7 @@ body {
   font-style: italic;
 }
 
-.content {
+.content_section-2 {
   display: flex;
   height: 100vh;
 }
@@ -393,10 +405,11 @@ body {
   background-color: #dedede;
   flex: 1;
   min-width: 50%;
-  background-image: url('reformasi.jpg');
-  background-size: cover;
+  background-image: url("./img/latar-img1.png");
+  background-size: 105%;
+  background-repeat: no-repeat;
   background-position: center;
-  padding: 120px 40px;
+  /* padding: 120px 40px; */
 }
 
 .right-2 {
@@ -410,17 +423,16 @@ body {
 }
 
 .right-2 h2 {
-  font-family: 'arges';
+  font-family: "arges";
   font-weight: 900;
   font-size: 96px;
   line-height: 85px;
   margin-bottom: 20px;
   letter-spacing: 1px;
-
 }
 
 .right-2 p {
-  font-family: 'PPMori';
+  font-family: "PPMori";
   font-weight: 400;
   font-size: 25px;
   line-height: 34px;
@@ -447,8 +459,59 @@ body {
     flex-direction: column;
   }
 
-}
+  .lb-paragraf2,
+  .lb-paragraf,
+  .main-latar {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+  .left_alisya {
+    width: auto;
+    padding: 64px 24px;
+  }
+  .left_alisya h1 {
+    font-size: 40;
+  }
+  .left_alisya p {
+    font-size: 24px;
+  }
 
+  .right_alisya {
+    width: 90%;
+    /* height:auto; */
+    margin: 24px 0;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .section-p,
+  .content_section-2 {
+    height: auto;
+  }
+  .top-box {
+    height: 100vh;
+  }
+  .section-main-3 {
+    padding: 64px 24px;
+  }
+
+  .description {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .content_section-2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #0d0d0d;
+    align-items: center;
+  }
+  .left-2 {
+    width: 90%;
+    margin: 24px 0;
+  }
+}
 
 /* ABIZAR CSS */
 .section_jeki {
@@ -459,7 +522,7 @@ body {
 
 .header_jeki {
   height: 100vh;
-  background-color: #E8465E;
+  background-color: #e8465e;
   /* Warna merah sesuai desain */
   display: flex;
   width: 100%;
@@ -477,7 +540,7 @@ body {
 }
 
 .ch1_jeki {
-  font-family: 'Arges', sans-serif;
+  font-family: "Arges", sans-serif;
   font-weight: 950;
   font-style: oblique;
   font-size: 32px;
@@ -486,7 +549,7 @@ body {
 }
 
 .year_jeki {
-  font-family: 'Arges', sans-serif;
+  font-family: "Arges", sans-serif;
   font-weight: 950;
   font-style: oblique;
   font-size: 128px;
@@ -495,7 +558,7 @@ body {
 }
 
 .subtitle_jeki {
-  font-family: 'Arges', sans-serif;
+  font-family: "Arges", sans-serif;
   font-weight: 900;
   font-style: oblique;
   font-size: 36px;
@@ -505,12 +568,13 @@ body {
 
 .content_jeki {
   padding: 80px 20px;
-  background-color: #F9F5EE;
+  background-color: #f9f5ee;
   display: flex;
   justify-content: center;
 }
 
 .content_wrapper_jeki_spacing {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -519,7 +583,7 @@ body {
 
 .text_jeki {
   width: 100%;
-  font-family: 'PPMori', sans-serif;
+  font-family: "PPMori", sans-serif;
   font-weight: 600;
   font-size: 48px;
   line-height: 49px;
@@ -537,7 +601,7 @@ body {
 }
 
 .img-box_jeki {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 4px;
   transition: 0.3s ease;
 }
@@ -553,6 +617,156 @@ body {
   height: 260px;
 }
 
+/* TOKOH | CSS */
+#tokoh {
+  padding: 64px 128px 64px 128px;
+  text-align: center;
+  background-color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 128px;
+  color: var(--black);
+  justify-content: center;
+}
+
+/* Tokoh: Text Wrapper */
+.text_wrapper_tokoh p {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "PPmori";
+}
+.text_wrapper_tokoh {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.title_content_tokoh h1 {
+  font-size: 8em;
+  font-style: italic;
+  line-height: 0.8;
+  letter-spacing: 1px;
+}
+
+/*Tokoh: Card | CSS */
+#card_container_footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  /* padding: 24px; */
+}
+.card {
+  overflow: hidden;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, filter 0.2s ease;
+  display: flex;
+}
+.card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.card:active {
+  filter: brightness(0.8);
+  transform: scale(0.98);
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DIRECT CSS */
+#dir_main {
+  display: flex;
+  justify-content: center;
+}
+#dir_sidebar-sticky {
+  padding-right: 64px;
+  padding-left: 64px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--red);
+  font-family: "coolvatica" sans-serif;
+}
+.x-spacing-wrapper {
+  height: 100%;
+  display: grid;
+  padding-top: 64px;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+}
+.dir_title_font {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 96px;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* .dir_peran_wrapper {
+  padding: 24px 0;
+} */
+.dir_description_peran {
+  font-size: 24px;
+  margin: 0;
+}
+#dir_description-list {
+  width: 100%;
+  height: 100%;
+  padding: 64px;
+  background-color: var(--cream);
+}
+.sidebar-sticky-img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* buat di js*/
+  background-size: cover;
+  background-position: center;
+}
+
+.list_items {
+  height: 240px;
+  display: flex;
+}
+.line_list {
+  width: 1.8px;
+  height: 100%;
+  background-color: black;
+}
+
+.list_indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list_content,
+.list_content p {
+  margin: 0;
+  padding-left: 12px;
+  font-size: large;
+  font-family: "poppins", sans-serif;
+}
+footer {
+  padding: 24px;
+}
+.footer_text_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+hr {
+  width: 85%;
+}
+
+/* Tokoh && direct CSS */
 @media (max-width: 768px) {
   .header_jeki {
     /* padding: 70px 20px 50px; */
@@ -560,7 +774,7 @@ body {
   }
 
   .content_jeki {
-    /* width: 100%; */
+    width: auto;
     height: 100vh;
     padding: 12px;
   }
@@ -597,24 +811,109 @@ body {
     flex-direction: column;
     align-items: center;
   }
+}
 
-  .left_alisya {
-    width: auto;
-    padding: 24px;
-    font-size: 12px;
-    /* line-height: 12px; */
+@media (max-width: 768px) {
+  /* TOKOH DAN DIRECT RESPONSIVE */
 
+  /* Responsive Direct Pages */
+  #dir_main {
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cream);
   }
-
-  .right_alisya {
-    width: 90%;
-    /* height:auto; */
-    margin: 24px 0;
-    height: 420px;
+  .sidebar-sticky-img-container {
+    width: 340px;
+    height: 240px;
   }
-
-  .section-main-3 {
+  #dir_sidebar-sticky {
+    position: inherit;
     padding: 0;
-    height: 100%;
+    height: auto;
+  }
+  .dir_title_font {
+    font-size: 64px;
+  }
+  .x-spacing-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    gap: 16px;
+  }
+  .sidebar-sticky-img-wrapper {
+    width: 100%;
+  }
+  #dir_description-list {
+    padding: 32px 0;
+    width: 90%;
+  }
+
+  /* responsive main pages */
+  #latar_belakang {
+    padding: 32px 24px;
+    gap: 0;
+  }
+  .latar_belakang_text_container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .latar_belakang_text_container,
+  .text_wrapper_tokoh p,
+  .latar_belakang_text_container-02 p {
+    font-size: 16px;
+  }
+
+  .value_proposition {
+    width: 100%;
+    padding: 24px 0;
+  }
+  .value_proposition > p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .latar_belakang_content-02_image_wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  .latar_belakang_content-02 {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #time_line {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Tokoh && akhir */
+  #tokoh {
+    padding: 0 24px;
+    gap: 0;
+  }
+  .title_content_tokoh h1 {
+    font-size: 64px;
+  }
+  .text_wrapper_tokoh {
+    width: auto;
+    padding: 32px 0;
+
+    gap: 32px;
+    font-size: small;
+  }
+
+  .card {
+    width: 100%; /* biar full tapi tetap proporsional */
+    height: auto; /* opsional: biar tinggi menyesuaikan isi */
+  }
+  hr {
+    width: auto;
+  }
+  .footer_text_wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    font-size: x-small;
   }
 }
