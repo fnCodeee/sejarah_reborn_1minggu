@@ -1,111 +1,62 @@
-// // src/musicPlayer.js
-
-// export function initMusicPlayer(audioId, audioSrc, startTime = 0, endTime = null) {
-//   const audio = document.getElementById(audioId);
-
-//   if (!audio) {
-//     console.error(`Audio element dengan id "${audioId}" tidak ditemukan.`);
-//     return;
-//   }
-
-//   // Set sumber lagu
-//   audio.src = audioSrc;
-//   audio.loop = true;
-
-//   // Ambil posisi terakhir dari localStorage (kalau ada)
-//   const lastTime = localStorage.getItem("laguTime");
-//   if (lastTime) {
-//     audio.currentTime = parseFloat(lastTime);
-//   } else {
-//     audio.currentTime = startTime;
-//   }
-
-//   // Mainkan audio (harus setelah interaksi user, misal klik tombol)
-//   audio.play().catch(err => {
-//     console.log("Menunggu interaksi user:", err.message);
-//   });
-
-//   // Simpan posisi lagu setiap 1 detik
-//   const saveInterval = setInterval(() => {
-//     localStorage.setItem("laguTime", audio.currentTime);
-//   }, 1000);
-
-//   // Kalau ada batas waktu (endTime), ulang dari awal
-//   if (endTime) {
-//     audio.addEventListener("timeupdate", () => {
-//       if (audio.currentTime >= endTime) {
-//         audio.currentTime = startTime;
-//         audio.play();
-//       }
-//     });
-//   }
-
-//   // Simpan waktu terakhir saat tab ditutup
-//   window.addEventListener("beforeunload", () => {
-//     localStorage.setItem("laguTime", audio.currentTime);
-//   });
-
-//   // Simpan status “lagu sedang main” biar halaman lain tahu
-//   localStorage.setItem("laguStatus", "playing");
-// }
-
-// src/musicPlayer.js
-
-export function initMusicPlayer(audioId, audioSrc, startTime = 0, endTime = null) {
-  let audio = document.getElementById(audioId);
-
-  if (!audio) {
-    console.error(`Audio element dengan id "${audioId}" tidak ditemukan.`);
-    return;
+export function initMusicPlayer(filePath) {
+  if (!window.globalMusicState) {
+    window.globalMusicState = {
+      audio: null,
+      isPlaying: false,
+    };
   }
 
-  audio.src = audioSrc;
-  audio.loop = true;
+  const state = window.globalMusicState;
 
-  // Ambil waktu terakhir
-  const lastTime = localStorage.getItem("laguTime");
-  if (lastTime) {
-    audio.currentTime = parseFloat(lastTime);
-  } else {
-    audio.currentTime = startTime;
-  }
+  if (!state.audio) {
+    const audio = new Audio(filePath);
+    audio.loop = true;
 
-  audio.play().catch(err => {
-    console.log("Menunggu interaksi user:", err.message);
-  });
+    const lastTime = localStorage.getItem("laguTime");
+    if (lastTime) {
+      audio.currentTime = parseFloat(lastTime);
+    }
+    
+    // nyimpen musik
+    setInterval(() => {
+      localStorage.setItem("laguTime", audio.currentTime);
+    }, 1000);
 
-  // Simpan posisi tiap 1 detik
-  const interval = setInterval(() => {
-    localStorage.setItem("laguTime", audio.currentTime);
-  }, 1000);
-
-  // Reset posisi bila sudah mencapai endTime (kalau ada)
-  if (endTime) {
-    audio.addEventListener("timeupdate", () => {
-      if (audio.currentTime >= endTime) {
-        audio.currentTime = startTime;
-        audio.play();
-      }
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("laguTime", audio.currentTime);
     });
+
+    state.audio = audio;
+    console.log("🎵 Audio baru dibuat.");
   }
 
-  // Simpan status dan referensi
-  localStorage.setItem("laguStatus", "playing");
-  window.currentAudio = audio; // simpan di window agar bisa diakses di file lain
-
-  return audio;
-}
-
-export function pauseMusic() {
-  if (window.currentAudio) {
-    window.currentAudio.pause();
-    localStorage.setItem("laguStatus", "paused");
+  if (!state.isPlaying) {
+    state.audio
+      .play()
+      .then(() => {
+        state.isPlaying = true;
+        console.log("musik di puter!");
+      })
+      .catch((err) => {
+        console.warn("Autoplay dicegah system: ", err.message);
+      });
   }
-}
 
-export function resumeMusic() {
-  if (window.currentAudio) {
-    window.currentAudio.play();
-    localStorage.setItem("laguStatus", "playing");
+  state.toggle = function() {
+    if(!state.audio) return;
+    if(state.isPlaying) {
+      state.audio.pause();
+      state.isPlaying = false;
+
+      console.log("Di Jeda");
+    } else {
+      state.audio.play();
+      state.isPlaying = true;
+
+      console.log("Di puter lagi ya :>");
+    }
   }
+
+  // Global object | data:
+  window.toggleMusic = state.toggle;
 }

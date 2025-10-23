@@ -1,5 +1,4 @@
 import data from "../data/data.js";
-import { initMusicPlayer, pauseMusic, resumeMusic } from "./musicPlayer.js";
 
 const timeLineWrapper = document.getElementById("time_line");
 const buttonJelajah = document.getElementById("button_jelajah");
@@ -7,29 +6,12 @@ buttonJelajah.addEventListener("click", () => {
   window.location.href = "https://id.wikipedia.org/wiki/Era_Reformasi";
 });
 
-
-const TriggerMusic = document.getElementById("trigger-music");
-let isPlaying = localStorage.getItem("laguStatus") === "playing";
-if (isPlaying) {
-  initMusicPlayer("lagu_merah_putih", "./assets/sound/belumTentu.mp3", 0, null);
-  TriggerMusic.textContent = "🔇 Matikan Musik";
-} else {
-  TriggerMusic.textContent = "🔊 Nyalakan Musik";
-}
-
-  TriggerMusic.addEventListener("click", () => {
-  if (!isPlaying) {
-    // nyalakan musik
-    initMusicPlayer("lagu_merah_putih", "./assets/sound/belumTentu.mp3", 0, null);
-    TriggerMusic.textContent = "🔇 Matikan Musik";
-    isPlaying = true;
-  } else {
-    // matikan musik
-    pauseMusic();
-    TriggerMusic.textContent = "🔊 Nyalakan Musik";
-    isPlaying = false;
-  }
-});
+// Button Music:
+// const TriggerMusic = document.getElementById("trigger-music");
+// TriggerMusic.addEventListener("click", () => {
+//   initMusicPlayer("lagu_merah_putih", "./assets/sound/belumTentu.mp3", 0, null);
+//   console.log("Button is work!")
+// });
 
 const array_time_line = [
   "1997 - Awal 1998",
@@ -38,7 +20,6 @@ const array_time_line = [
   "Pasca 1998",
 ];
 for (let i = 1; i <= 4; i++) {
-  // console.log(timeLineWrapper);
 
   const image_container = document.createElement("div");
   const imageWrapper1 = document.createElement("div");
@@ -54,7 +35,7 @@ for (let i = 1; i <= 4; i++) {
   imageWrapper2.style.overflow = "hidden";
 
   text.innerText = `${array_time_line[i - 1]}`;
-  // console.log(array_time_line[i - 1]);
+  console.log(array_time_line[i - 1]);
 
   img.style.width = "100%";
   img.style.height = "100%";
@@ -97,9 +78,6 @@ data.forEach((items, index) => {
   cardContainer.appendChild(imgWrapperCard);
 
   imgWrapperCard.addEventListener("click", () => {
-  
-    // Music Player For Loop:
     window.location.href = `./direct.html?id=${items.id}`;
   });
 });
-

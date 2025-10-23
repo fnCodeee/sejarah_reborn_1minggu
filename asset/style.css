@@ -140,6 +140,17 @@ body {
   background-color: var(--red);
 }
 
+.hero-btn:active {
+  filter: brightness(75%);
+}
+
+#trigger-music {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+
 .button-container {
   display: flex;
   justify-content: center;

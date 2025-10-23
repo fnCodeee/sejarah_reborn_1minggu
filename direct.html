@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="./asset/style.css" />
   </head>
   <body style="margin: 0">
-    <audio id="lagu_merah_putih" autoplay loop></audio>
     <section id="dir_main" class="font_ppmori">
       <div id="dir_sidebar-sticky"></div>
 
@@ -25,13 +24,7 @@
     <script type="module">
       // import
       import { initMusicPlayer } from "./src/musicPlayer.js";
-          const laguStatus = localStorage.getItem("laguStatus");
-
-  // Kalau sebelumnya sudah main, lanjut dari waktu terakhir
-  if (laguStatus === "playing") {
-    initMusicPlayer("lagu_merah_putih", "./assets/sound/belumTentu.mp3", 0, null);
-  }
-    
+      initMusicPlayer('./assets/sound/belumTentu.mp3');
     </script>
   </body>
 </html>

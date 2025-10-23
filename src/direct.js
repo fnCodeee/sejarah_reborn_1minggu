@@ -7,11 +7,6 @@ const parameter = new URLSearchParams(window.location.search);
 const id = parseInt(parameter.get("id"));
 const item = data.find((item) => item.id === id); //Kondisi
 
-const laguStatus_continue = localStorage.getItem("laguStatus");
-if (laguStatus_continue !== "playing") {
-  initMusicPlayer("lagu_merah_putih", "./assets/sound/belumTentu.mp3", 0, null);
-}
-
 // Fetch
 if (item) {
   sidebarSticky.innerHTML = `

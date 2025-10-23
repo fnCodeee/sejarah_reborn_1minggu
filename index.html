@@ -10,29 +10,19 @@
 </head>
 
 <body>
-  <audio id="lagu_merah_putih" autoplay loop></audio>
-  <script type="module">
-    import { initMusicPlayer } from "./src/musicPlayer.js";
 
-    const laguStatus = localStorage.getItem("laguStatus");
-    if (laguStatus === "playing") {
-      initMusicPlayer("lagu_merah_putih", "./assets/sound/belumTentu.mp3", 0, null);
-    }
-
-  </script>
+  <button id="trigger-music" class="hero-btn">
+    <img style="width: 24px;" src="./assets/icon/music-icon.png" alt="">
+  </button>
 
   <!-- hero -->
   <section id="hero-section">
     <div class="heading-hero">
       <h1 class="arges-heading ">Suara Perubahan dari Jalanan: Mengenang
         Reformasi 1998</h1>
-        <div class="button-container">
-          <button onclick="initMusicPlayer('lagu_merah_putih', './assets/sound/belumTentu.mp3', 0, null)" id="button_jelajah"
-          class="hero-btn">Jelajahi</button>
-          <button id="trigger-music" class="hero-btn">
-            <img style="width: 24px;" src="./assets/icon/music-icon.png" alt="">
-          </button>
-        </div>
+      <div class="button-container">
+        <button id="button_jelajah" class="hero-btn">Jelajahi</button>
+      </div>
     </div>
   </section>
 
@@ -218,6 +208,14 @@
   </footer>
 
   <script type="module" src="./src/main.js"></script>
+  <script type="module">
+    import { initMusicPlayer } from "./src/musicPlayer.js";
+    initMusicPlayer('./assets/sound/belumTentu.mp3');
+
+    document.getElementById("trigger-music").addEventListener('click', () => {
+      window.toggleMusic && window.toggleMusic();
+    });
+  </script>
 
 </body>
 
