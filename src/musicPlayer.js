@@ -16,7 +16,7 @@ export function initMusicPlayer(filePath) {
     if (lastTime) {
       audio.currentTime = parseFloat(lastTime);
     }
-    
+
     // nyimpen musik
     setInterval(() => {
       localStorage.setItem("laguTime", audio.currentTime);
@@ -42,9 +42,9 @@ export function initMusicPlayer(filePath) {
       });
   }
 
-  state.toggle = function() {
-    if(!state.audio) return;
-    if(state.isPlaying) {
+  state.toggle = function () {
+    if (!state.audio) return;
+    if (state.isPlaying) {
       state.audio.pause();
       state.isPlaying = false;
 
@@ -55,7 +55,7 @@ export function initMusicPlayer(filePath) {
 
       console.log("Di puter lagi ya :>");
     }
-  }
+  };
 
   // Global object | data:
   window.toggleMusic = state.toggle;

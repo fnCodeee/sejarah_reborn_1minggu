@@ -52,27 +52,14 @@ for (let i = 1; i <= 4; i++) {
 }
 
 // Direct | Logic
-// Contoh array :
-const formatImg = [
-  { nama: "Gambar 1", ext: "jpeg" },
-  { nama: "Gambar 2", ext: "jpeg" },
-  { nama: "Gambar 3", ext: "jpeg" },
-  { nama: "Gambar 4", ext: "jpeg" },
-  { nama: "Gambar 5", ext: "jpeg" },
-];
-
 const cardContainer = document.getElementById("card_container_footer");
-data.forEach((items, index) => {
+data.forEach(items => {
   const imgWrapperCard = document.createElement("div");
   const cardImg = document.createElement("img");
 
   imgWrapperCard.classList.add("card");
   cardImg.classList.add("card-img");
 
-  const isLoopLimited = index + 1; // test: loop 1 - 5
-
-  // cardImg.src = `./assets/images/foto-0${isLoopLimited}.jpeg`;
-  // cardImg.src = `../assets/tokoh-images/abri.jpg`;
   cardImg.src = items.image.src;
   imgWrapperCard.appendChild(cardImg);
   cardContainer.appendChild(imgWrapperCard);

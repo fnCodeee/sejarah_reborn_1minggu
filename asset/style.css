@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "arges";
-  src: url(/asset/arges-variable-wght-wdth-slnt.ttf) format("truetype");
+  src: url(./arges-variable-wght-wdth-slnt.ttf) format("truetype");
   font-weight: 100 900;
   font-stretch: 75% 125%;
   font-style: oblique 0deg 10deg;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "PPmori";
-  src: url(/asset/PPMori-Regular.otf);
+  src: url(./PPMori-Regular.otf);
   /* src: url(/asset/PPMori-SemiBold.otf); */
 }
 
@@ -313,13 +313,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh;  */
   height: 340px;
   overflow: hidden;
 }
 .section_img_wrapper img {
   width: 100%;
-  height: 100%;
+  height: 340px;
   object-fit: cover;
 }
 
@@ -341,7 +340,7 @@ body {
 
 .section-main-3 {
   background-color: var(--black);
-  padding: 64px 192px;
+  padding: 64px;
   height: 100%;
 }
 
@@ -617,15 +616,21 @@ body {
   transition: 0.3s ease;
 }
 
+
 .img-box_jeki:nth-child(1),
 .img-box_jeki:nth-child(3) {
   width: 220px;
   height: 180px;
+  overflow: hidden;
 }
 
 .img-box_jeki:nth-child(2) {
   width: 320px;
   height: 260px;
+  overflow: hidden;
+}
+.img-box_jeki:nth-child(2) img, .img-box_jeki:nth-child(3) img{
+  width: 340px;
 }
 
 /* TOKOH | CSS */
@@ -927,4 +932,4 @@ hr {
     gap: 12px;
     font-size: x-small;
   }
-}
+} 
